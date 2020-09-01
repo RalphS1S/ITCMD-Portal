@@ -16,6 +16,7 @@ pipeline {
           steps {
               echo 'Executando testes de regressão SIT'
               sh 'robot -d ./logs testes/'
+              robot 'log'
           }
       }
       stage('Teste-DEV'){
