@@ -11,7 +11,7 @@ ${BASE_URL}    http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/
 
 ***Keywords*****
 Abrir Navegador
-    Open Browser                     about:blank                                     chrome
+    Open Browser                     about:blank                                     headlesschrome
     Set Selenium Implicit Wait       10
     Set Window Size                  1440                                            900
     Maximize Browser Window
