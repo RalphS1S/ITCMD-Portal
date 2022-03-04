@@ -2,7 +2,7 @@
 Documentation     Login
 ...               Para que eu possa ter acesso a interface ITCMD
 ...               Sendo um usuário que possui um login
-...               Quero poder iniciar uma nova sessão
+...               Quero iniciar uma nova sessão
 
 Resource          ../resources/steps_kw.robot
 

@@ -1,1173 +1,806 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200901 11:20:58.628" rpa="false">
-<suite id="s1" name="Criardecl" source="C:\Auto\testes\criardecl.robot">
-<kw name="Abrir Navegador" library="base" type="setup">
+<robot generator="Robot 4.1.2 (Python 3.9.5 on win32)" generated="20220304 10:36:31.935" rpa="false" schemaversion="2">
+<suite id="s1" name="Testes" source="D:\1 Meu Programas NOTESEFA\Pessoais\Auto\testes">
+<suite id="s1-s1" name="divórcioJudicialEquan" source="D:\1 Meu Programas NOTESEFA\Pessoais\Auto\testes\divórcioJudicialEquan.robot">
+<kw name="Abrir Navegador" library="base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
 <arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200901 11:20:58.807" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200901 11:20:58.806" endtime="20200901 11:21:01.791"></status>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<arguments>
-<arg>10</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:01.791" endtime="20200901 11:21:01.792"></status>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220304 10:36:32.130" level="INFO">Opening browser 'Firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20220304 10:36:32.139" level="INFO">Firefox driver log is always forced to to: D:\1 Meu Programas NOTESEFA\Pessoais\Auto\logs\geckodriver-312.log</msg>
+<status status="PASS" starttime="20220304 10:36:32.130" endtime="20220304 10:36:37.600"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<arguments>
 <arg>1440</arg>
 <arg>900</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:01.792" endtime="20200901 11:21:03.914"></status>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220304 10:36:37.605" endtime="20220304 10:36:37.637"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200901 11:21:03.915" endtime="20200901 11:21:04.034"></status>
+<status status="PASS" starttime="20220304 10:36:37.637" endtime="20220304 10:36:37.890"/>
 </kw>
-<status status="PASS" starttime="20200901 11:20:58.806" endtime="20200901 11:21:04.035"></status>
+<status status="PASS" starttime="20220304 10:36:32.130" endtime="20220304 10:36:37.890"/>
 </kw>
-<test id="s1-t1" name="Quero logar para criar uma doação plena">
+<test id="s1-s1-t1" name="Quero logar para criar um divórcio equânime">
 <kw name="Estou Logado" library="base">
 <kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
 <arg>${BASE_URL}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:04.041" level="INFO">Opening url 'http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/itcmdSobre'</msg>
-<status status="PASS" starttime="20200901 11:21:04.040" endtime="20200901 11:21:05.210"></status>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220304 10:36:37.899" level="INFO">Opening url 'http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/itcmdSobre'</msg>
+<status status="PASS" starttime="20220304 10:36:37.890" endtime="20220304 10:36:39.127"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
 <arg>${FAZER_DECLARAÇÃO}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.211" level="INFO">Clicking element 'id=pt1:b4a'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.210" endtime="20200901 11:21:05.249"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
-<arguments>
+<msg timestamp="20220304 10:36:39.128" level="INFO">Clicking element 'id=pt1:b4a'.</msg>
+<status status="PASS" starttime="20220304 10:36:39.128" endtime="20220304 10:36:39.370"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${ACESSAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.250" level="INFO">Clicking element 'pt1:popup:b1'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.250" endtime="20200901 11:21:05.750"></status>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:36:39.370" level="INFO">Double clicking element 'id=pt1:popup:b1'.</msg>
+<status status="PASS" starttime="20220304 10:36:39.370" endtime="20220304 10:36:39.702"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LGN_USUARIO}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.751" level="INFO">Clicking element 'id=attribute'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.751" endtime="20200901 11:21:05.790"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${LGN_USUARIO}</arg>
-<arg>${USR_CPF}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.791" level="INFO">Typing text '38399276847' into text field 'id=attribute'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.790" endtime="20200901 11:21:05.837"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${LGN_SENHA}</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:05.837" endtime="20200901 11:21:05.856"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LGN_SENHA}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.857" level="INFO">Clicking element 'id=password'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.856" endtime="20200901 11:21:05.895"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${LGN_SENHA}</arg>
-<arg>${USR_SENHA}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.896" level="INFO">Typing text 'sefa2020' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.895" endtime="20200901 11:21:05.936"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${BTN_ACESSAR}</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:05.936" endtime="20200901 11:21:05.951"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_ACESSAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:05.952" level="INFO">Clicking button 'xpath=//input[@value='Acessar']'.</msg>
-<status status="PASS" starttime="20200901 11:21:05.951" endtime="20200901 11:21:06.981"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:04.039" endtime="20200901 11:21:06.982"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:04.035" endtime="20200901 11:21:06.983" critical="yes"></status>
-</test>
-<test id="s1-t2" name="Enviar declaração doação">
-<kw name="Dado que envio uma declaração de doação" library="steps_kw">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>15</arg>
-</arguments>
-<msg timestamp="20200901 11:21:21.986" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20200901 11:21:06.985" endtime="20200901 11:21:21.986"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='pt1:b4']/a/span</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:21.986" endtime="20200901 11:21:22.375"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LGN_DECLARAÇÃO}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:22.376" level="INFO">Clicking element 'xpath=//*[@class="x27f xkq p_AFTextOnly"]'.</msg>
-<status status="PASS" starttime="20200901 11:21:22.375" endtime="20200901 11:21:22.432"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>299 do Código Penal:</arg>
-</arguments>
-<msg timestamp="20200901 11:21:22.866" level="INFO">Current page contains text '299 do Código Penal:'.</msg>
-<status status="PASS" starttime="20200901 11:21:22.432" endtime="20200901 11:21:22.866"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CAMPO_TEL}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:22.866" level="INFO">Clicking element 'id=pt1:it4::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:22.866" endtime="20200901 11:21:22.916"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CAMPO_TEL}</arg>
-<arg>${TELEFONE}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:22.917" level="INFO">Typing text '(41) 3023-3312' into text field 'id=pt1:it4::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:22.916" endtime="20200901 11:21:22.970"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CAMPO_LOGR}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:22.971" level="INFO">Clicking element 'id=pt1:itxComplLogradouro::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:22.970" endtime="20200901 11:21:23.010"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CAMPO_LOGR}</arg>
-<arg>teste qualquer</arg>
-</arguments>
-<msg timestamp="20200901 11:21:23.011" level="INFO">Typing text 'teste qualquer' into text field 'id=pt1:itxComplLogradouro::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:23.010" endtime="20200901 11:21:23.066"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CHK_299}</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:23.066" endtime="20200901 11:21:23.083"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CHK_299}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:23.083" level="INFO">Clicking element 'xpath= //input[@id='pt1:sbcUsuConcordaTermos::content']'.</msg>
-<status status="PASS" starttime="20200901 11:21:23.083" endtime="20200901 11:21:23.116"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>299 do Código Penal:</arg>
-</arguments>
-<msg timestamp="20200901 11:21:23.122" level="INFO">Current page contains text '299 do Código Penal:'.</msg>
-<status status="PASS" starttime="20200901 11:21:23.116" endtime="20200901 11:21:23.122"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${BTN_INICIAR}</arg>
-<arg>timeout=None</arg>
+<arg>timeout=60</arg>
 <arg>error=None</arg>
-</arguments>
-<msg timestamp="20200901 11:21:23.144" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
-<status status="PASS" starttime="20200901 11:21:23.123" endtime="20200901 11:21:23.386"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:24.388" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:23.386" endtime="20200901 11:21:24.388"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_INICIAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:24.390" level="INFO">Clicking element 'xpath=//div[@id='pt1:btnIniciarDeclaracao']/a/span'.</msg>
-<status status="PASS" starttime="20200901 11:21:24.389" endtime="20200901 11:21:24.427"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:06.985" endtime="20200901 11:21:24.427"></status>
-</kw>
-<kw name="E tenho um doador e donatário válidos" library="steps_kw">
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>${DESEJO}</arg>
-<arg>O que deseja fazer?</arg>
-</arguments>
-<msg timestamp="20200901 11:21:24.428" level="INFO">Verifying element 'xpath=//span[contains(text(), 'O que deseja fazer?')]' contains exact text 'O que deseja fazer?'.</msg>
-<status status="PASS" starttime="20200901 11:21:24.428" endtime="20200901 11:21:25.281"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NOVA_DECL}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.282" level="INFO">Clicking element 'id=pt1:btnComplementarNao'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.281" endtime="20200901 11:21:25.314"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${TIPO_TRANS}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:25.314" endtime="20200901 11:21:25.390"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_DOACAO}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.390" level="INFO">Clicking element 'id=pt1:btnTransmDoacao'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.390" endtime="20200901 11:21:25.419"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Qual a modalidade?</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.484" level="INFO">Current page contains text 'Qual a modalidade?'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.420" endtime="20200901 11:21:25.484"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Por Ato Particular</arg>
-<arg>loglevel=TRACE]</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.492" level="INFO">Current page contains text 'Por Ato Particular'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.484" endtime="20200901 11:21:25.492"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.493" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:25.493" endtime="20200901 11:21:25.496"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:25.493" endtime="20200901 11:21:25.496"></status>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<arguments>
-<arg>${RADIO_DOACAO}</arg>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.496" level="INFO">Selecting '1' from radio button 'pt1:sorTipoRegistro'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.496" endtime="20200901 11:21:25.536"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${DTA_DOACAO}</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:25.536" endtime="20200901 11:21:25.604"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${DTA_MODALIDADE}</arg>
-<arg>17/12/2019</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.605" level="INFO">Typing text '17/12/2019' into text field 'id=pt1:itxDtAcaoModalidade::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.604" endtime="20200901 11:21:25.664"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${PROSS_DOACAO}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:25.665" level="INFO">Clicking element 'xpath=//*[@id='pt1:b3']'.</msg>
-<status status="PASS" starttime="20200901 11:21:25.664" endtime="20200901 11:21:25.700"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:26.702" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:25.700" endtime="20200901 11:21:26.702"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:26.703" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:26.702" endtime="20200901 11:21:26.709"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:26.702" endtime="20200901 11:21:26.709"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Qual o tipo de doação?</arg>
-</arguments>
-<msg timestamp="20200901 11:21:26.718" level="INFO">Current page contains text 'Qual o tipo de doação?'.</msg>
-<status status="PASS" starttime="20200901 11:21:26.709" endtime="20200901 11:21:26.718"></status>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<arguments>
-<arg>${DOACAO_PLENA}</arg>
-<arg>0</arg>
-</arguments>
-<msg timestamp="20200901 11:21:26.718" level="INFO">Selecting '0' from radio button 'pt1:sorTipoDoacao'.</msg>
-<status status="PASS" starttime="20200901 11:21:26.718" endtime="20200901 11:21:26.762"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${BTN_SALVAR}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:26.763" endtime="20200901 11:21:26.777"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:27.778" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:26.777" endtime="20200901 11:21:27.778"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:27.782" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:27.780" endtime="20200901 11:21:27.786"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:27.779" endtime="20200901 11:21:27.786"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_PROSSEGUIR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:27.787" level="INFO">Double clicking element 'xpath=/html/body/div[1]/form/span[1]/div[2]/div[5]/div/div/div/span/div/div[3]/div'.</msg>
-<status status="PASS" starttime="20200901 11:21:27.787" endtime="20200901 11:21:28.069"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:28.070" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:28.069" endtime="20200901 11:21:28.073"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:28.069" endtime="20200901 11:21:28.073"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Pessoas Envolvidas</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:29.285" level="INFO">Current page contains text 'Pessoas Envolvidas'.</msg>
-<status status="PASS" starttime="20200901 11:21:28.073" endtime="20200901 11:21:29.285"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CAD_TRANSMIT}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:29.286" level="INFO">Clicking element 'id=pt1:btnCadastrarTransmitente'.</msg>
-<status status="PASS" starttime="20200901 11:21:29.286" endtime="20200901 11:21:29.323"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CMP_CPF}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:29.323" endtime="20200901 11:21:29.527"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${NUM_CPF}</arg>
-<arg>${CPF_1}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:29.527" level="INFO">Typing text '053.285.259-14' into text field 'id=pt1:itxNumCpfCnpj::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:29.527" endtime="20200901 11:21:29.595"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LUPA_CPF}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:29.595" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnCpfCnpj"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:29.595" endtime="20200901 11:21:29.879"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Nome Completo</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:31.062" level="INFO">Current page contains text 'Nome Completo'.</msg>
-<status status="PASS" starttime="20200901 11:21:29.879" endtime="20200901 11:21:31.063"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_TEL}</arg>
-<arg>${TELEFONE}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:31.063" level="INFO">Typing text '(41) 3023-3312' into text field 'id=pt1:itxNumTelefone::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:31.063" endtime="20200901 11:21:31.131"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_EMAIL}</arg>
-<arg>${EMAIL}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:31.132" level="INFO">Typing text 'ralph.souza@integraparana.com.br' into text field 'id=pt1:itxEmail::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:31.131" endtime="20200901 11:21:31.215"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_CEP}</arg>
-<arg>${CEP}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:31.215" level="INFO">Typing text '80240018' into text field 'id=pt1:itxCEP::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:31.215" endtime="20200901 11:21:31.281"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:32.281" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:31.281" endtime="20200901 11:21:32.281"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LUPA_CEP}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:32.283" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnCEP"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:32.282" endtime="20200901 11:21:32.592"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:33.593" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:32.592" endtime="20200901 11:21:33.594"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:33.598" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:33.596" endtime="20200901 11:21:33.621"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:33.594" endtime="20200901 11:21:33.622"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Endereço</arg>
-</arguments>
-<msg timestamp="20200901 11:21:33.642" level="INFO">Current page contains text 'Endereço'.</msg>
-<status status="PASS" starttime="20200901 11:21:33.622" endtime="20200901 11:21:33.642"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGR}</arg>
-<arg>100</arg>
-</arguments>
-<msg timestamp="20200901 11:21:33.642" level="INFO">Typing text '100' into text field 'id=pt1:itxNrLogradouro::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:33.642" endtime="20200901 11:21:33.704"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${PARTES_SALVAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:33.704" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnSalvar"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:33.704" endtime="20200901 11:21:33.989"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Pessoas Envolvidas</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:35.232" level="INFO">Current page contains text 'Pessoas Envolvidas'.</msg>
-<status status="PASS" starttime="20200901 11:21:33.990" endtime="20200901 11:21:35.232"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:35.234" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:35.233" endtime="20200901 11:21:35.242"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:35.233" endtime="20200901 11:21:35.242"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CAD_BENFICIARIO}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:35.243" level="INFO">Clicking element 'xpath=/html/body/div/form/span[1]/div[2]/div[4]/div/div/div/div[3]/div[4]/table/tbody/tr/td[3]/div/div/div/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:35.243" endtime="20200901 11:21:35.287"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CMP_CPF}</arg>
-<arg>timeout=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:35.287" endtime="20200901 11:21:35.468"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${NUM_CPF}</arg>
-<arg>${CPF_2}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:35.469" level="INFO">Typing text '110.020.488-18' into text field 'id=pt1:itxNumCpfCnpj::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:35.468" endtime="20200901 11:21:35.532"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LUPA_CPF}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:35.532" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnCpfCnpj"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:35.532" endtime="20200901 11:21:35.808"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Nome Completo</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:36.035" level="INFO">Current page contains text 'Nome Completo'.</msg>
-<status status="PASS" starttime="20200901 11:21:35.808" endtime="20200901 11:21:36.035"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_TEL}</arg>
-<arg>${TELEFONE}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:36.035" level="INFO">Typing text '(41) 3023-3312' into text field 'id=pt1:itxNumTelefone::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:36.035" endtime="20200901 11:21:36.102"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_EMAIL}</arg>
-<arg>${EMAIL}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:36.102" level="INFO">Typing text 'ralph.souza@integraparana.com.br' into text field 'id=pt1:itxEmail::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:36.102" endtime="20200901 11:21:36.191"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${CMP_CEP}</arg>
-<arg>${CEP}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:36.191" level="INFO">Typing text '80240018' into text field 'id=pt1:itxCEP::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:36.191" endtime="20200901 11:21:36.254"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:37.257" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:36.254" endtime="20200901 11:21:37.257"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${LUPA_CEP}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:37.258" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnCEP"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:37.257" endtime="20200901 11:21:37.555"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:38.557" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200901 11:21:37.555" endtime="20200901 11:21:38.557"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:38.561" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:38.559" endtime="20200901 11:21:38.575"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:38.558" endtime="20200901 11:21:38.576"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Endereço</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.045" level="INFO">Current page contains text 'Endereço'.</msg>
-<status status="PASS" starttime="20200901 11:21:38.576" endtime="20200901 11:21:41.046"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGR}</arg>
-<arg>100</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.046" level="INFO">Typing text '100' into text field 'id=pt1:itxNrLogradouro::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:41.046" endtime="20200901 11:21:41.113"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${PARTES_SALVAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.113" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnSalvar"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:41.113" endtime="20200901 11:21:41.411"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>RALPH DA SILVA SOUZA</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.794" level="INFO">Current page contains text 'RALPH DA SILVA SOUZA'.</msg>
-<status status="PASS" starttime="20200901 11:21:41.411" endtime="20200901 11:21:41.794"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>LAURA MARIA FARIA ANTONIALI LEAL DE BRITTO</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.802" level="INFO">Current page contains text 'LAURA MARIA FARIA ANTONIALI LEAL DE BRITTO'.</msg>
-<status status="PASS" starttime="20200901 11:21:41.795" endtime="20200901 11:21:41.802"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_SAV_PARTES}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:41.803" level="INFO">Double clicking element 'xpath=/html/body/div/form/span[1]/div[2]/div[5]/div/div/span/div/div[3]/div/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:41.803" endtime="20200901 11:21:42.097"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:24.427" endtime="20200901 11:21:42.097"></status>
-</kw>
-<kw name="Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional" library="steps_kw">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CAD_BENS}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:42.097" endtime="20200901 11:21:43.414"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CAD_BENS}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:43.414" level="INFO">Clicking element 'xpath=//*[@id="pt1:b36"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:43.414" endtime="20200901 11:21:43.443"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Bens e Direitos</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:43.452" level="INFO">Current page contains text 'Bens e Direitos'.</msg>
-<status status="PASS" starttime="20200901 11:21:43.444" endtime="20200901 11:21:43.452"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${TIPO_BEM}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:43.452" level="INFO">Clicking element 'xpath=//*[@id="pt1:comboTipoBem::content"]'.</msg>
-<status status="PASS" starttime="20200901 11:21:43.452" endtime="20200901 11:21:43.848"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${$_MOEDANAC}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:43.848" endtime="20200901 11:21:43.867"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${$_MOEDANAC}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:43.868" level="INFO">Clicking element 'xpath=//option[contains(text(), 'Dinheiro em Espécie - Moeda Nacional')]'.</msg>
-<status status="PASS" starttime="20200901 11:21:43.867" endtime="20200901 11:21:43.894"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${OBS_MOEDA}</arg>
-<arg>observação regressivo</arg>
-</arguments>
-<msg timestamp="20200901 11:21:43.894" level="INFO">Typing text 'observação regressivo' into text field 'id=pt1:formDinheiroEspecieMoedaNacional:itObsDinheiroEspecieMoedaNacional::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:43.894" endtime="20200901 11:21:45.085"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${VLR_DECL}</arg>
-<arg>500.000,00</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.086" level="INFO">Typing text '500.000,00' into text field 'id=pt1:formDinheiroEspecieMoedaNacional:itDinheiroEspecieMoedaNacionalValorDeclarado::content'.</msg>
-<status status="PASS" starttime="20200901 11:21:45.085" endtime="20200901 11:21:45.145"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_SAV_BENS}</arg>
-<arg>modifier=False</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.145" level="INFO">Clicking element 'xpath=//*[@id="pt1:b4"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:45.145" endtime="20200901 11:21:45.176"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:42.097" endtime="20200901 11:21:45.177"></status>
-</kw>
-<kw name="E partilho o valor do bem" library="steps_kw">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Dinheiro Espécie Moeda Nacional</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.447" level="INFO">Current page contains text 'Dinheiro Espécie Moeda Nacional'.</msg>
-<status status="PASS" starttime="20200901 11:21:45.177" endtime="20200901 11:21:45.447"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.449" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:45.448" endtime="20200901 11:21:45.458"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:45.448" endtime="20200901 11:21:45.459"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${PERC_%}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:45.459" endtime="20200901 11:21:45.479"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${PERC_%}</arg>
-<arg>BACKSPACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.480" level="INFO">Sending key(s) ('BACKSPACE',) to xpath=//*[@id="pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content"] element.</msg>
-<msg timestamp="20200901 11:21:45.779" level="INFO">Pressing special key BACKSPACE to element.</msg>
-<msg timestamp="20200901 11:21:45.779" level="INFO">Releasing special key BACKSPACE.</msg>
-<status status="PASS" starttime="20200901 11:21:45.479" endtime="20200901 11:21:45.785"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${PERC_%}</arg>
-<arg>100</arg>
-</arguments>
-<msg timestamp="20200901 11:21:45.785" level="INFO">Sending key(s) ('100',) to xpath=//*[@id="pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content"] element.</msg>
-<msg timestamp="20200901 11:21:46.058" level="INFO">Sending keys 100</msg>
-<status status="PASS" starttime="20200901 11:21:45.785" endtime="20200901 11:21:46.077"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${PERC_%}</arg>
-<arg>ENTER</arg>
-</arguments>
-<msg timestamp="20200901 11:21:46.078" level="INFO">Sending key(s) ('ENTER',) to xpath=//*[@id="pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content"] element.</msg>
-<msg timestamp="20200901 11:21:46.351" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20200901 11:21:46.351" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20200901 11:21:46.078" endtime="20200901 11:21:46.364"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_SAV_PERC}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:46.365" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnSalvarProsseguir"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:46.364" endtime="20200901 11:21:46.642"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3s</arg>
-</arguments>
-<msg timestamp="20200901 11:21:49.644" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200901 11:21:46.643" endtime="20200901 11:21:49.644"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Demonstrativo de cálculo</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.192" level="INFO">Current page contains text 'Demonstrativo de cálculo'.</msg>
-<status status="PASS" starttime="20200901 11:21:49.644" endtime="20200901 11:21:57.193"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:45.177" endtime="20200901 11:21:57.193"></status>
-</kw>
-<kw name="Então devo observar os valores informados e obter o nº da declaração" library="steps_kw">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Fato Gerador - Doação Plena</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.213" level="INFO">Current page contains text 'Fato Gerador - Doação Plena'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.196" endtime="20200901 11:21:57.213"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>AÇÃO NECESSÁRIA:</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.223" level="INFO">Current page contains text 'AÇÃO NECESSÁRIA:'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.213" endtime="20200901 11:21:57.223"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${FG_TRASMIT}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.230" level="INFO">Current page contains element 'xpath=//span[contains(text(), 'RALPH DA SILVA SOUZA')]'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.223" endtime="20200901 11:21:57.230"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${FG_PERC}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.236" level="INFO">Current page contains element 'xpath=//span[contains(text(), '100,00')]'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.230" endtime="20200901 11:21:57.236"></status>
-</kw>
-<kw name="Scroll Page To Location" library="base">
-<arguments>
-<arg>0</arg>
-<arg>2000</arg>
-</arguments>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<arguments>
-<arg>window.scrollTo(${x_location},${y_location})</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.237" level="INFO">Executing JavaScript:
-window.scrollTo(0,2000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20200901 11:21:57.237" endtime="20200901 11:21:57.240"></status>
-</kw>
-<status status="PASS" starttime="20200901 11:21:57.237" endtime="20200901 11:21:57.240"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${FG_TOTAL}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.246" level="INFO">Current page contains element 'xpath=//span[contains(text(), 'R$ 500.000,00')]'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.240" endtime="20200901 11:21:57.246"></status>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${FG_CALC}</arg>
-<arg>CALCULAR FATO GERADOR</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:57.247" endtime="20200901 11:21:57.262"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${FG_CALC}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.262" level="INFO">Double clicking element 'id=pt1:it1:0:bb1'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.262" endtime="20200901 11:21:57.554"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${FG_PAGAR}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:57.554" endtime="20200901 11:21:57.616"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${FG_SALVAR}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:57.616" level="INFO">Double clicking element 'xpath=//*[@id="pt1:btnSalvarProsseguir"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:21:57.616" endtime="20200901 11:21:57.908"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${NO_ANEXO}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:57.908" endtime="20200901 11:21:59.395"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${ANEXO_SAV}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:21:59.395" endtime="20200901 11:21:59.411"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${ANEXO_SAV}</arg>
-</arguments>
-<msg timestamp="20200901 11:21:59.412" level="INFO">Double clicking element 'id=pt1:btnSalvarProsseguir'.</msg>
-<status status="PASS" starttime="20200901 11:21:59.412" endtime="20200901 11:21:59.718"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${TXT_ENVIO}</arg>
-<arg>loglevel=TRACE</arg>
-</arguments>
-<msg timestamp="20200901 11:22:04.343" level="INFO">Current page contains text 'Confira os dados abaixo antes de enviar a declaração:'.</msg>
-<status status="PASS" starttime="20200901 11:21:59.718" endtime="20200901 11:22:04.343"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${BTN_ENVIO}</arg>
-<arg>timeout=None</arg>
-<arg>error=None</arg>
-</arguments>
-<status status="PASS" starttime="20200901 11:22:04.343" endtime="20200901 11:22:04.374"></status>
-</kw>
-<kw name="Double Click Element" library="SeleniumLibrary">
-<doc>Double clicks the element identified by ``locator``.</doc>
-<arguments>
-<arg>${BTN_ENVIO}</arg>
-</arguments>
-<msg timestamp="20200901 11:22:04.375" level="INFO">Double clicking element 'xpath=//*[@id="pt1:j_id__ctru13"]/a'.</msg>
-<status status="PASS" starttime="20200901 11:22:04.374" endtime="20200901 11:22:04.684"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${ENV_SUCESSO}</arg>
-</arguments>
-<msg timestamp="20200901 11:22:07.336" level="INFO">Current page contains element 'xpath=//span[contains(text(), 'Declaração finalizada e Enviada com sucesso!')]'.</msg>
-<status status="PASS" starttime="20200901 11:22:04.684" endtime="20200901 11:22:07.336"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NUM_DECL}</arg>
-</arguments>
-<assign>
-<var>${number}</var>
-</assign>
-<msg timestamp="20200901 11:22:07.355" level="INFO">${number} = 200000014641-2</msg>
-<status status="PASS" starttime="20200901 11:22:07.336" endtime="20200901 11:22:07.355"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${number}</arg>
-</arguments>
-<msg timestamp="20200901 11:22:07.355" level="INFO">200000014641-2</msg>
-<status status="PASS" starttime="20200901 11:22:07.355" endtime="20200901 11:22:07.355"></status>
-</kw>
-<kw name="End Test" library="base">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200901 11:22:07.644" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200901 11:22:07.356" endtime="20200901 11:22:07.644"></status>
+<msg timestamp="20220304 10:36:44.550" level="FAIL">InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<status status="FAIL" starttime="20220304 10:36:44.520" endtime="20220304 10:36:44.550"/>
 </kw>
-<status status="PASS" starttime="20200901 11:22:07.355" endtime="20200901 11:22:07.644"></status>
+<msg timestamp="20220304 10:36:44.550" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<msg timestamp="20220304 10:36:44.570" level="FAIL">WebDriverException: Message: Failed to decode response from marionette
+</msg>
+<status status="FAIL" starttime="20220304 10:36:39.702" endtime="20220304 10:36:44.570"/>
 </kw>
-<status status="PASS" starttime="20200901 11:21:57.195" endtime="20200901 11:22:07.644"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
 </kw>
-<status status="PASS" starttime="20200901 11:21:06.984" endtime="20200901 11:22:07.645" critical="yes"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>${USR_CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>${USR_SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.571"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.571" endtime="20220304 10:36:44.572"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:37.890" endtime="20220304 10:36:44.572"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:37.890" endtime="20220304 10:36:44.573">WebDriverException: Message: Failed to decode response from marionette
+</status>
 </test>
-<kw name="Fechar Navegador" library="base" type="teardown">
+<test id="s1-s1-t2" name="Enviar declaração divórcio">
+<kw name="Dado que inicio uma declaração de divórcio judicial" library="steps_kw3">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:36:44.586" level="FAIL">InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<status status="FAIL" starttime="20220304 10:36:44.578" endtime="20220304 10:36:44.586"/>
+</kw>
+<msg timestamp="20220304 10:36:44.586" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<msg timestamp="20220304 10:36:44.589" level="FAIL">InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<status status="FAIL" starttime="20220304 10:36:44.576" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Click Element At Coordinates" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>147</arg>
+<arg>19</arg>
+<doc>Click the element ``locator`` at ``xoffset/yoffset``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Art. 299 - Omitir,</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_TEL}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_LOGR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.589" endtime="20220304 10:36:44.589"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.590" endtime="20220304 10:36:44.590"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>299 do Código Penal:</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.590" endtime="20220304 10:36:44.590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.590" endtime="20220304 10:36:44.590"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:36:44.590" endtime="20220304 10:36:44.590"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:44.576" endtime="20220304 10:36:44.590"/>
+</kw>
+<kw name="E tenho um divorciado e divorciando válidos" library="steps_kw3">
+<status status="NOT RUN" starttime="20220304 10:36:44.591" endtime="20220304 10:36:44.591"/>
+</kw>
+<kw name="Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional" library="steps_kw3">
+<status status="NOT RUN" starttime="20220304 10:36:44.591" endtime="20220304 10:36:44.591"/>
+</kw>
+<kw name="E partilho o valor do bem" library="steps_kw3">
+<status status="NOT RUN" starttime="20220304 10:36:44.592" endtime="20220304 10:36:44.592"/>
+</kw>
+<kw name="Então devo observar um FG equânime e obter o nº da declaração" library="steps_kw3">
+<status status="NOT RUN" starttime="20220304 10:36:44.592" endtime="20220304 10:36:44.592"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:44.575" endtime="20220304 10:36:44.593">InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</status>
+</test>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200901 11:22:07.647" endtime="20200901 11:22:07.784"></status>
+<status status="PASS" starttime="20220304 10:36:44.594" endtime="20220304 10:36:44.597"/>
 </kw>
-<status status="PASS" starttime="20200901 11:22:07.647" endtime="20200901 11:22:07.784"></status>
+<status status="PASS" starttime="20220304 10:36:44.594" endtime="20220304 10:36:44.597"/>
 </kw>
 <doc>Criar declaração
 Para que consiga cadastrar uma declaração
 Sendo um usuário logado
-Quero enviar um declaração de doação plena</doc>
-<status status="PASS" starttime="20200901 11:20:58.629" endtime="20200901 11:22:07.784"></status>
+Quero concluir o envio de um divórcio equânime</doc>
+<status status="FAIL" starttime="20220304 10:36:31.959" endtime="20220304 10:36:44.597"/>
+</suite>
+<suite id="s1-s2" name="doaçãoAtoParticular" source="D:\1 Meu Programas NOTESEFA\Pessoais\Auto\testes\doaçãoAtoParticular.robot">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220304 10:36:44.622" level="INFO">Opening browser 'Firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20220304 10:36:44.629" level="INFO">Firefox driver log is always forced to to: D:\1 Meu Programas NOTESEFA\Pessoais\Auto\logs\geckodriver-313.log</msg>
+<status status="PASS" starttime="20220304 10:36:44.622" endtime="20220304 10:36:50.886"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1440</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220304 10:36:50.886" endtime="20220304 10:36:50.904"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220304 10:36:50.904" endtime="20220304 10:36:51.165"/>
+</kw>
+<status status="PASS" starttime="20220304 10:36:44.622" endtime="20220304 10:36:51.165"/>
+</kw>
+<test id="s1-s2-t1" name="Quero logar para criar uma doação plena">
+<kw name="Estou Logado" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220304 10:36:51.168" level="INFO">Opening url 'http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/itcmdSobre'</msg>
+<status status="PASS" starttime="20220304 10:36:51.167" endtime="20220304 10:36:52.024"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FAZER_DECLARAÇÃO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:36:52.025" level="INFO">Clicking element 'id=pt1:b4a'.</msg>
+<status status="PASS" starttime="20220304 10:36:52.025" endtime="20220304 10:36:52.262"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:36:52.263" level="INFO">Double clicking element 'id=pt1:popup:b1'.</msg>
+<status status="PASS" starttime="20220304 10:36:52.262" endtime="20220304 10:36:52.601"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:37:52.655" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-229.png"&gt;&lt;img src="selenium-screenshot-229.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220304 10:37:52.609" endtime="20220304 10:37:52.656"/>
+</kw>
+<msg timestamp="20220304 10:37:52.658" level="FAIL">None</msg>
+<status status="FAIL" starttime="20220304 10:36:52.602" endtime="20220304 10:37:52.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.658" endtime="20220304 10:37:52.658"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>${USR_CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.658" endtime="20220304 10:37:52.658"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.658" endtime="20220304 10:37:52.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.658" endtime="20220304 10:37:52.658"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>${USR_SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.658" endtime="20220304 10:37:52.659"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.659" endtime="20220304 10:37:52.659"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:37:52.659" endtime="20220304 10:37:52.659"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:51.167" endtime="20220304 10:37:52.659"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:36:51.166" endtime="20220304 10:37:52.660">None</status>
+</test>
+<test id="s1-s2-t2" name="Enviar declaração doação">
+<kw name="Dado que inicio uma declaração de doação ato particular" library="steps_kw">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:38:52.743" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-230.png"&gt;&lt;img src="selenium-screenshot-230.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220304 10:38:52.699" endtime="20220304 10:38:52.743"/>
+</kw>
+<msg timestamp="20220304 10:38:52.744" level="FAIL">Element with locator 'id=pt1:b4' not found.</msg>
+<status status="FAIL" starttime="20220304 10:37:52.662" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.744" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Click Element At Coordinates" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>147</arg>
+<arg>19</arg>
+<doc>Click the element ``locator`` at ``xoffset/yoffset``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.744" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.744" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Art. 299 - Omitir,</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.744" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_TEL}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.744" endtime="20220304 10:38:52.744"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_LOGR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>299 do Código Penal:</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:38:52.745" endtime="20220304 10:38:52.745"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:37:52.662" endtime="20220304 10:38:52.746"/>
+</kw>
+<kw name="E tenho um doador e donatário válidos" library="steps_kw">
+<status status="NOT RUN" starttime="20220304 10:38:52.746" endtime="20220304 10:38:52.746"/>
+</kw>
+<kw name="Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional" library="steps_kw">
+<status status="NOT RUN" starttime="20220304 10:38:52.747" endtime="20220304 10:38:52.747"/>
+</kw>
+<kw name="E partilho o valor do bem" library="steps_kw">
+<status status="NOT RUN" starttime="20220304 10:38:52.747" endtime="20220304 10:38:52.747"/>
+</kw>
+<kw name="Então devo observar os valores informados e obter o nº da declaração" library="steps_kw">
+<status status="NOT RUN" starttime="20220304 10:38:52.748" endtime="20220304 10:38:52.748"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:37:52.661" endtime="20220304 10:38:52.748">Element with locator 'id=pt1:b4' not found.</status>
+</test>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220304 10:38:52.750" endtime="20220304 10:38:53.291"/>
+</kw>
+<status status="PASS" starttime="20220304 10:38:52.750" endtime="20220304 10:38:53.291"/>
+</kw>
+<doc>Criar declaração
+Para que consiga cadastrar uma declaração
+Sendo um usuário logado
+Quero concluir o envio de uma doação plena</doc>
+<status status="FAIL" starttime="20220304 10:36:44.599" endtime="20220304 10:38:53.291"/>
+</suite>
+<suite id="s1-s3" name="doaçãoEscrituraPública" source="D:\1 Meu Programas NOTESEFA\Pessoais\Auto\testes\doaçãoEscrituraPública.robot">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220304 10:38:53.313" level="INFO">Opening browser 'Firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20220304 10:38:53.322" level="INFO">Firefox driver log is always forced to to: D:\1 Meu Programas NOTESEFA\Pessoais\Auto\logs\geckodriver-314.log</msg>
+<status status="PASS" starttime="20220304 10:38:53.313" endtime="20220304 10:39:01.429"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1440</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220304 10:39:01.429" endtime="20220304 10:39:01.462"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220304 10:39:01.462" endtime="20220304 10:39:01.730"/>
+</kw>
+<status status="PASS" starttime="20220304 10:38:53.312" endtime="20220304 10:39:01.730"/>
+</kw>
+<test id="s1-s3-t1" name="Quero logar para criar uma doação plena">
+<kw name="Estou Logado" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220304 10:39:01.732" level="INFO">Opening url 'http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/itcmdSobre'</msg>
+<status status="PASS" starttime="20220304 10:39:01.731" endtime="20220304 10:39:02.664"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FAZER_DECLARAÇÃO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:39:02.665" level="INFO">Clicking element 'id=pt1:b4a'.</msg>
+<status status="PASS" starttime="20220304 10:39:02.664" endtime="20220304 10:39:02.911"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:39:02.912" level="INFO">Double clicking element 'id=pt1:popup:b1'.</msg>
+<status status="PASS" starttime="20220304 10:39:02.911" endtime="20220304 10:39:03.262"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:40:03.367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-231.png"&gt;&lt;img src="selenium-screenshot-231.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220304 10:40:03.332" endtime="20220304 10:40:03.367"/>
+</kw>
+<msg timestamp="20220304 10:40:03.368" level="FAIL">None</msg>
+<status status="FAIL" starttime="20220304 10:39:03.262" endtime="20220304 10:40:03.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.368" endtime="20220304 10:40:03.368"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>${USR_CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.368" endtime="20220304 10:40:03.368"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.369" endtime="20220304 10:40:03.369"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.369" endtime="20220304 10:40:03.369"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>${USR_SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.369" endtime="20220304 10:40:03.369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.369" endtime="20220304 10:40:03.369"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:40:03.369" endtime="20220304 10:40:03.369"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:39:01.731" endtime="20220304 10:40:03.370"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:39:01.730" endtime="20220304 10:40:03.370">None</status>
+</test>
+<test id="s1-s3-t2" name="Enviar declaração doação">
+<kw name="Dado que envio uma declaração de doação por escritura pública" library="steps_kw2">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:41:03.490" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-232.png"&gt;&lt;img src="selenium-screenshot-232.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220304 10:41:03.454" endtime="20220304 10:41:03.490"/>
+</kw>
+<msg timestamp="20220304 10:41:03.491" level="FAIL">Element with locator 'id=pt1:b4' not found.</msg>
+<status status="FAIL" starttime="20220304 10:40:03.372" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Click Element At Coordinates" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<arg>147</arg>
+<arg>19</arg>
+<doc>Click the element ``locator`` at ``xoffset/yoffset``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_DECLARAÇÃO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Art. 299 - Omitir,</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_TEL}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.491"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_LOGR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.491" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.492" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHK_299}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.492" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>299 do Código Penal:</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.492" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.492" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:41:03.492" endtime="20220304 10:41:03.492"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:40:03.372" endtime="20220304 10:41:03.492"/>
+</kw>
+<kw name="E tenho um doador e donatário válidos" library="steps_kw2">
+<status status="NOT RUN" starttime="20220304 10:41:03.493" endtime="20220304 10:41:03.493"/>
+</kw>
+<kw name="Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional" library="steps_kw2">
+<status status="NOT RUN" starttime="20220304 10:41:03.493" endtime="20220304 10:41:03.493"/>
+</kw>
+<kw name="E partilho o valor do bem" library="steps_kw2">
+<status status="NOT RUN" starttime="20220304 10:41:03.493" endtime="20220304 10:41:03.493"/>
+</kw>
+<kw name="Então devo observar os valores informados e obter o nº da declaração" library="steps_kw2">
+<status status="NOT RUN" starttime="20220304 10:41:03.494" endtime="20220304 10:41:03.494"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:40:03.371" endtime="20220304 10:41:03.494">Element with locator 'id=pt1:b4' not found.</status>
+</test>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220304 10:41:03.496" endtime="20220304 10:41:03.983"/>
+</kw>
+<status status="PASS" starttime="20220304 10:41:03.495" endtime="20220304 10:41:03.983"/>
+</kw>
+<doc>Criar declaração
+Para que consiga cadastrar uma declaração
+Sendo um usuário logado
+Quero concluir o envio de uma doação plena por escritura pública</doc>
+<status status="FAIL" starttime="20220304 10:38:53.293" endtime="20220304 10:41:03.983"/>
+</suite>
+<suite id="s1-s4" name="loginDeclarante" source="D:\1 Meu Programas NOTESEFA\Pessoais\Auto\testes\loginDeclarante.robot">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220304 10:41:03.991" level="INFO">Opening browser 'Firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20220304 10:41:03.998" level="INFO">Firefox driver log is always forced to to: D:\1 Meu Programas NOTESEFA\Pessoais\Auto\logs\geckodriver-315.log</msg>
+<status status="PASS" starttime="20220304 10:41:03.991" endtime="20220304 10:41:09.152"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1440</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220304 10:41:09.153" endtime="20220304 10:41:09.172"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220304 10:41:09.172" endtime="20220304 10:41:09.446"/>
+</kw>
+<status status="PASS" starttime="20220304 10:41:03.991" endtime="20220304 10:41:09.446"/>
+</kw>
+<test id="s1-s4-t1" name="Quero logar como usuário válido">
+<kw name="Dado que acesso a página login" library="steps_kw">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220304 10:41:09.448" level="INFO">Opening url 'http://webcnp01.homologacao.sefa.parana:8893/portalsgt_SIT/faces/itcmdSobre'</msg>
+<status status="PASS" starttime="20220304 10:41:09.448" endtime="20220304 10:41:10.182"/>
+</kw>
+<status status="PASS" starttime="20220304 10:41:09.447" endtime="20220304 10:41:10.182"/>
+</kw>
+<kw name="E acesso título itcmdSobre" library="steps_kw">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FAZER_DECLARAÇÃO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220304 10:41:10.183" endtime="20220304 10:41:10.212"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FAZER_DECLARAÇÃO}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:41:10.213" level="INFO">Clicking element 'id=pt1:b4a'.</msg>
+<status status="PASS" starttime="20220304 10:41:10.213" endtime="20220304 10:41:10.435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220304 10:41:10.435" endtime="20220304 10:41:10.685"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220304 10:41:10.685" level="INFO">Clicking element 'id=pt1:popup:b1'.</msg>
+<status status="PASS" starttime="20220304 10:41:10.685" endtime="20220304 10:41:10.812"/>
+</kw>
+<status status="PASS" starttime="20220304 10:41:10.183" endtime="20220304 10:41:10.813"/>
+</kw>
+<kw name="Quando logo com a minha credencial" library="steps_kw">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220304 10:42:13.295" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-233.png"&gt;&lt;img src="selenium-screenshot-233.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220304 10:42:10.970" endtime="20220304 10:42:13.295"/>
+</kw>
+<msg timestamp="20220304 10:42:13.296" level="FAIL">None</msg>
+<status status="FAIL" starttime="20220304 10:41:10.814" endtime="20220304 10:42:13.296"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.296" endtime="20220304 10:42:13.296"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_USUARIO}</arg>
+<arg>${USR_CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>modifier=False</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LGN_SENHA}</arg>
+<arg>${USR_SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<arg>timeout=60</arg>
+<arg>error=None</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_ACESSAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220304 10:42:13.297" endtime="20220304 10:42:13.297"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:41:10.813" endtime="20220304 10:42:13.298"/>
+</kw>
+<kw name="Então valido usuário logado" library="steps_kw">
+<status status="NOT RUN" starttime="20220304 10:42:13.299" endtime="20220304 10:42:13.299"/>
+</kw>
+<status status="FAIL" starttime="20220304 10:41:09.447" endtime="20220304 10:42:13.300">None</status>
+</test>
+<kw name="Fechar Navegador" library="base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220304 10:42:13.302" endtime="20220304 10:42:13.915"/>
+</kw>
+<status status="PASS" starttime="20220304 10:42:13.301" endtime="20220304 10:42:13.915"/>
+</kw>
+<doc>Login
+Para que eu possa ter acesso a interface ITCMD
+Sendo um usuário que possui um login
+Quero iniciar uma nova sessão</doc>
+<status status="FAIL" starttime="20220304 10:41:03.984" endtime="20220304 10:42:13.916"/>
+</suite>
+<status status="FAIL" starttime="20220304 10:36:31.937" endtime="20220304 10:42:13.918"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="0" fail="7" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Criardecl">Criardecl</stat>
+<stat pass="0" fail="7" skip="0" id="s1" name="Testes">Testes</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="divórcioJudicialEquan">Testes.divórcioJudicialEquan</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s2" name="doaçãoAtoParticular">Testes.doaçãoAtoParticular</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s3" name="doaçãoEscrituraPública">Testes.doaçãoEscrituraPública</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s4" name="loginDeclarante">Testes.loginDeclarante</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220304 10:36:44.550" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
+<msg timestamp="20220304 10:36:44.586" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: Tried to run command without establishing a connection
+</msg>
 </errors>
 </robot>

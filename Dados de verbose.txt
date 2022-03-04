@@ -1,0 +1,16 @@
+Bash Docker subir ambiente 
+
+docker-compose up -d = Subindo o ambiente
+
+pip install -r requirements.txt - Instala todos os requerimentos dentro da pasta do projeto
+
+
+
+Comandos para Robot
+
+robot -d .\logs\ tests\inserirNomeTeste.robot  = Executa o teste selecionado dentro da pasta tests
+
+robot -d ./logs -i smoke tests\ = Executa somente o teste marcado pela TAG (smoke)
+
+headlesschrome = executas o testes sem abrir o navegador
+

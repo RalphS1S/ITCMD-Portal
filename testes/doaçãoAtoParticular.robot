@@ -2,8 +2,7 @@
 Documentation       Criar declaração
 ...                 Para que consiga cadastrar uma declaração
 ...                 Sendo um usuário logado
-...                 Quero enviar um declaração de doação plena
-
+...                 Quero concluir o envio de uma doação plena
 
 Resource          ../resources/steps_kw.robot
 
@@ -17,7 +16,7 @@ Quero logar para criar uma doação plena
     #Go To       ${URL_AREA}
 
 Enviar declaração doação
-    Dado que envio uma declaração de doação
+    Dado que inicio uma declaração de doação ato particular
     E tenho um doador e donatário válidos 
     Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional
     E partilho o valor do bem
