@@ -1,10 +1,10 @@
 ***Settings***
-Documentation       Criar declaração
-...                 Para que consiga cadastrar uma declaração
-...                 Sendo um usuário logado
-...                 Quero concluir o envio de uma doação plena
+Documentation    Criar declaração
+...              Para que consiga cadastrar uma declaração
+...              Sendo um usuário logado
+...              Quero concluir o envio de uma doação plena
 
-Resource          ../resources/steps_kw.robot
+Resource    ../../resources/KeyWords/steps_kw.robot
 
 Suite Setup       Abrir Navegador
 Suite Teardown    Fechar Navegador

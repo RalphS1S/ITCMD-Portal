@@ -2,9 +2,9 @@
 Documentation    Criar declaração
 ...              Para que consiga cadastrar uma declaração
 ...              Sendo um usuário logado
-...              Quero concluir o envio de um divórcio equânime
+...              Quero concluir o envio de um divórcio judicial equânime
 
-Resource    ../resources/steps_kw3.robot
+Resource    ../../resources/KeyWords/steps_kw3.robot
 
 Suite Setup       Abrir Navegador
 Suite Teardown    Fechar Navegador

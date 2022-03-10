@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    base.robot
+Resource    ../base.robot
 
 #Library    keyword.py
 
@@ -14,7 +14,7 @@ E acesso título itcmdSobre
     #Localizando a Page /itcmdSobre
     Wait Until Element Is Visible    ${FAZER_DECLARAÇÃO}
     Click Element                    ${FAZER_DECLARAÇÃO}    modifier=False
-    Wait Until Element Is Visible    ${ACESSAR}             timeout=None      error=None
+    Wait Until Element Is Visible    ${ACESSAR}             timeout=60        error=None
     Click Element                    ${ACESSAR}             modifier=False
 
 Quando logo com a minha credencial
@@ -33,20 +33,16 @@ Quando logo com a minha credencial
     Wait Until Element Is Enabled    ${BTN_ACESSAR}    timeout=60    error=None
     Double Click Element             ${BTN_ACESSAR}
 
-Então valido usuário logado
-    Page Should Contain    Olá, ${full_name_login}
-
+    Então valido usuário logado
 
 #----Criar declaração Divórcio----#
 
 Dado que inicio uma declaração de divórcio judicial
 
-    Wait Until Element Is Enabled    ${LGN_DECLARAÇÃO}    timeout=60    error=None    
+    Wait Until Element Is Enabled    ${LGN_DECLARAÇÃO}    timeout=60        error=None    
     Element Should Be Enabled        ${LGN_DECLARAÇÃO}
-    Click Element At Coordinates     ${LGN_DECLARAÇÃO}    147           19            
-    Click Element                    ${LGN_DECLARAÇÃO}    
-
-    Page Should Contain    Art. 299 - Omitir,
+    Click Element At Coordinates     ${LGN_DECLARAÇÃO}    147               19            
+    Click Element                    ${LGN_DECLARAÇÃO}    modifier=False    
 
     Wait Until Element Is Visible    ${CAMPO_TEL}    timeout=60    error=None    
     #Double Click Element             ${CAMPO_TEL}
@@ -88,7 +84,7 @@ E tenho um divorciado e divorciando válidos
 
     Wait Until Element Is Visible    ${DT_SENTENÇA}    timeout=60    error=None
     Input Text                       ${DT_SENTENÇA}    01/10/2021
-    #Wait Until Element Is Visible    ${BTN_SETA}                                        timeout=None    error=None
+    #Wait Until Element Is Visible    ${BTN_SETA}                                        timeout=60    error=None
 
     Scroll Page To Location    0                                                  2000 
     Execute JavaScript         document.getElementById('pt1:b3::icon').click()
@@ -105,21 +101,20 @@ E tenho um divorciado e divorciando válidos
     Input Text                       ${NUM_AUTOS}    45555
     Click Element                    ${BTN_SETA1}    modifier=False
 
-    Wait Until Element Is Visible    ${CAD_UF}    timeout=60        error=None    
+    Wait Until Element Is Visible    ${CAD_UF}    timeout=60    error=None    
     Select From List By Value        ${CAD_UF}    17
-    Click Element                    ${CAD_UF}    modifier=False
+    Wait Until Element Contains      ${CAD_UF}    PR            timeout=60    error=None
 
+    Wait Until Element Is Visible    ${CD_MUNICIPIO}                                                       timeout=60    error=None    
+    Select From List By Value        ${CD_MUNICIPIO}                                                       95            
+    Wait Until Element Contains      ${CD_MUNICIPIO}                                                       CURITIBA      timeout=60    error=None
+    Execute Javascript               document.getElementById('pt1:socCodigoMunicipio::content').click()
 
-    Wait Until Element Is Visible    ${CD_MUNICIPIO}    timeout=60    error=None
-    Select From List By Value        ${CD_MUNICIPIO}    95
-    Wait Until Element Contains      ${CD_MUNICIPIO}    CURITIBA      timeout=60    error=None    
-
-
-    Wait Until Element Is Visible    ${JUIZO_DIV}    timeout=none           error=None
-    Sleep                            1s              
+    Wait Until Element Is Visible    ${JUIZO_DIV}    timeout=60             error=None    
+    Press Keys                       ${JUIZO_DIV}    ENTER                  
     Input Text                       ${JUIZO_DIV}    JuizoAutomaçãoRalph
 
-    Wait Until Element Is Visible    ${BTN_SETA2}    timeout=none    error=None
+    Wait Until Element Is Visible    ${BTN_SETA2}    timeout=60    error=None
     Double Click Element             ${BTN_SETA2}    
 
     Wait Until Element Is Visible    ${SOBREPART_N}    timeout=60        error=None
@@ -129,9 +124,9 @@ E tenho um divorciado e divorciando válidos
     Wait Until Element Is Enabled    ${ALVARA_N}    timeout=60        error=None
     Click Element                    ${ALVARA_N}    modifier=False
 
+    Scroll Page To Location          0                2000 
     Wait Until Element Is Visible    ${BTN_SALVAR}    timeout=60    error=None
     Wait Until Element Is Enabled    ${BTN_SALVAR}    timeout=60    error=Botão "Salvar" sem ação
-    Scroll Page To Location          0                2000 
     Double Click Element             ${BTN_SALVAR}
 
 
@@ -221,7 +216,7 @@ E partilho o valor do bem
 #----Percentual para o primeiro Divorciando-----#
     Scroll Page To Location          0            2000
     #Page Should Contain              Dinheiro em Espécie - Moeda Nacional    loglevel=TRACE
-    Wait Until Element Is Visible    ${PERC_%}    timeout=None    error=None
+    Wait Until Element Is Visible    ${PERC_%}    timeout=60    error=None
     Press Keys                       ${PERC_%}    BACKSPACE
     Press Keys                       ${PERC_%}    50
     Press Keys                       ${PERC_%}    ENTER
@@ -300,18 +295,16 @@ Então devo observar um FG equânime e obter o nº da declaração
     Click Element                    ${BTN_SALVAR}    modifier=False
 
  #TELA DE ENVIO
-    Wait Until Element Is Visible    ${BTN_ENVIO}      timeout=60        error=None     
-    Page Should Contain              ${TXT_ENVIO}      loglevel=TRACE
-    
-    Wait Until Element Is Visible    ${BTN_ENVIO}      timeout=60        error=None
+    Wait Until Element Is Visible    ${BTN_ENVIO}    timeout=60    error=None    
+    Wait Until Page Contains         ${TXT_ENVIO}    timeout=60    error=None
+
+    Wait Until Element Is Enabled    ${BTN_ENVIO}    timeout=60    error=Botão Envio    
     Double Click Element             ${BTN_ENVIO}
 
-    Wait Until Element Is Visible    ${ENV_SUCESSO}    timeout=60        error=None 
-    Page Should Contain Element      ${ENV_SUCESSO}
+    Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=60    error=None
 
 
     ${number}    Get Text     ${NUM_DECL}
     Log          ${number}
 
     End Test 
-

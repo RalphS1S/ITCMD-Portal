@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    base.robot
+Resource    ../base.robot
 
 #Library    keyword.py
 
@@ -33,8 +33,8 @@ Quando logo com a minha credencial
     Wait Until Element Is Enabled    ${BTN_ACESSAR}    timeout=60    error=None
     Double Click Element             ${BTN_ACESSAR}
 
-Então valido usuário logado
-    Page Should Contain    Olá, ${full_name_login}
+    Então valido usuário logado
+
 
 #---Criar declaração de Doação por Escritura Pública---
 
@@ -59,7 +59,7 @@ Dado que envio uma declaração de doação por escritura pública
     Wait Until Element Is Visible    ${BTN_INICIAR}    timeout=60    error=None
     Click Element                    ${BTN_INICIAR}    
 
-E tenho um doador e donatário válidos
+E tenho um doador e donatário válidos para escritura
 
     Wait Until Element Is Visible    ${DESEJO}    timeout=60             error=None
     Element Text Should Be           ${DESEJO}    O que deseja fazer?
@@ -81,9 +81,10 @@ E tenho um doador e donatário válidos
     Select From List By Value        ${CAD_UF}    17
     Click Element                    ${CAD_UF}    modifier=False
 
-    Wait Until Element Is Visible    ${CD_MUNICIPIO}    timeout=60    error=None
+    Wait Until Element Is Visible    ${CD_MUNICIPIO}    timeout=60        error=None
     Select From List By Value        ${CD_MUNICIPIO}    95
-    Wait Until Element Contains      ${CD_MUNICIPIO}    CURITIBA      timeout=60    error=None 
+    Wait Until Element Contains      ${CD_MUNICIPIO}    CURITIBA          timeout=60    error=None
+    Click Element                    ${CD_MUNICIPIO}    modifier=False    
 
     Wait Until Element Is Visible    ${CD_CARTORIO}       timeout=60                   error=None
     Select From List By Value        ${CD_CARTORIO}       20                           
@@ -95,9 +96,10 @@ E tenho um doador e donatário válidos
     Page Should Contain              Qual o tipo de doação?
     Select Radio Button              ${DOACAO_PLENA}           0
 
-    Wait Until Element Is Visible    ${BTN_SALVAR}    timeout=60    error=None
-    Scroll Page To Location          0                2000
-    Double Click Element             ${BTN_SALVAR}
+    Scroll Page To Location          0                    2000
+    Wait Until Element Is Enabled    ${BTN_PROSSEGUIR}    timeout=20    error=None
+    Double Click Element             ${BTN_PROSSEGUIR}
+
 
 #------Tela Lista Partes------#
     #TRANSMITENTE - DOADOR
@@ -190,7 +192,7 @@ E partilho o valor do bem
     Double Click Element             ${BTN_SAV_PERC}
 
 
-Então devo observar os valores informados e obter o nº da declaração
+Então devo observar os valores informados obtendo o nº da declaração da escritura
 
     Wait Until Element Is Visible    ${FG_TRASMIT}                  timeout=60        error=None
     Page Should Contain              Fato Gerador - Doação Plena    loglevel=TRACE
@@ -226,11 +228,11 @@ Então devo observar os valores informados e obter o nº da declaração
     Wait Until Element Is Visible    ${BTN_ENVIO}    timeout=60        error=None    
     Page Should Contain              ${TXT_ENVIO}    loglevel=TRACE
 
-    Wait Until Element Is Visible    ${BTN_ENVIO}    timeout=60    error=None
+    Wait Until Element Is Enabled    ${BTN_ENVIO}    timeout=60    error=None    
     Double Click Element             ${BTN_ENVIO}
 
-    Wait Until Element Is Visible    ${ENV_SUCESSO}    timeout=60    error=None 
-    Page Should Contain Element      ${ENV_SUCESSO}
+
+    Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=60    error=None
 
 
     ${number}    Get Text     ${NUM_DECL}

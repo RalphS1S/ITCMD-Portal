@@ -12,8 +12,8 @@ ${BASE_URL_UAT}    http://webcnp01.homologacao.sefa.parana:8895/itcmd_UAT/faces/
 
 ***Keywords*****
 Abrir Navegador
-    Open Browser               about:blank    Firefox
-    Set Window Size            1440           900
+    Open Browser               about:blank    Firefox 
+    Set Window Size            1920           1024
     Maximize Browser Window
 
 Fechar Navegador
@@ -37,6 +37,13 @@ Estou Logado
 Scroll Page To Location
     [Arguments]           ${x_location}                                   ${y_location}
     Execute JavaScript    window.scrollTo(${x_location},${y_location})
+
+Então valido usuário logado
+
+    ${name_login}          Get Text         ${full_name_login}    
+    Page Should Contain    ${name_login}    loglevel=TRACE
+    Log                    ${name_login}    
+
 
 End Test
     Capture Page Screenshot    #filename=ITCMD-screenshot-{index.png}

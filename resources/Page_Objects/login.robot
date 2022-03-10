@@ -30,8 +30,7 @@ Quando logo com a minha credencial
     Input Text       ${LGN_SENHA}    ${USR_SENHA}
 
     #Clicar em Acessar
-    Wait Until Element Is Visible    ${BTN_ACESSAR}
-    Click Button                     ${BTN_ACESSAR}
+    Wait Until Element Is Visible       ${BTN_ACESSAR}
+    Click Button                        ${BTN_ACESSAR}
+    Wait Until Page Contains Element    ${full_name_login}    timeout=60    error=None 
 
-Então valido usuário logado
-    Page Should Contain    Olá, ${full_name_login}

@@ -7,15 +7,15 @@ ${URL_BASE}
 
 #Login Page /itcmdSobre
 ${FAZER_DECLARAÇÃO}    id=pt1:b4a
-${LGN_DECLARAÇÃO}      id=pt1:b4
+${LGN_DECLARAÇÃO}      xpath=//*[@id='pt1:b4' or contains(text(), 'FAZER DECLARAÇÃO')]
 ${ACESSAR}             id=pt1:popup:b1
 
 #Autenticador
 ${LGN_USUARIO}        id=attribute
-${USR_CPF}            53598830904 
+${USR_CPF}            13605255728 
 ${LGN_SENHA}          id=password
-${USR_SENHA}          sefa2021
-${full_name_login}    SERGIO ZAPE
+${USR_SENHA}          sefa2022
+${full_name_login}    xpath=//*[@id='pt1:header:pgl3' or contains(text(), 'Olá,')]
 
 #Botão Acesso
 ${BTN_ACESSAR}    xpath=//input[@value='Acessar']
@@ -69,28 +69,32 @@ ${ALVARA_N}          id=pt1:btnLiberacaoBensAlvaraNao
 
 
 #Dados Tipo Transmissão Divórcio Cartório
-${BTN_DIVORCIO}    id=pt1:btnTransmDivorcio
-${RD_DIVORCIO}     id=pt1:sorTipoInventario:_0
-
-
+${BTN_DIVORCIO}      id=pt1:btnTransmDivorcio
+${RD_DIVORCIO}       id=pt1:sorTipoInventario:_0
+${CD_DIVORCIANDO}    id=pt1:btnCadastrarDivorciando
 
 
 #PARTES
-${CAD_DIVORCIO}     id=pt1:btnCadastrarDivorciando
-${CPF_1}            053.285.259-14
-${CPF_2}            110.020.488-18
-${EMAIL}            ralph.souza@integraparana.com.br
-${CEP}              80240018
-${CAD_TRANSMIT}     id=pt1:btnCadastrarTransmitente
-${CMP_CPF}          xpath=//label[contains(text(),"CPF/CNPJ")]
-${NUM_CPF}          id=pt1:itxNumCpfCnpj::content
-${LUPA_CPF}         xpath=//*[@id="pt1:btnCpfCnpj"]/a
-${CMP_TEL}          id=pt1:itxNumTelefone::content
-${CMP_EMAIL}        id=pt1:itxEmail::content
-${CMP_CEP}          id=pt1:itxCEP::content
-${LUPA_CEP}         xpath=//*[@id="pt1:btnCEP"]/a
-${LOGR}             id=pt1:itxNrLogradouro::content
-${PARTES_SALVAR}    xpath=//*[@id="pt1:btnSalvar"]/a
+${CAD_DIVORCIO}      id=pt1:btnCadastrarDivorciando
+${CPF_1}             053.285.259-14
+${CPF_2}             110.020.488-18
+${CPF_3}             535.988.309-04
+${CPF_4}             136.052.557-28
+${EMAIL}             ralph.souza@integraparana.com.br
+${CEP}               80240018
+${CAD_TRANSMIT}      id=pt1:btnCadastrarTransmitente
+${CMP_CPF}           xpath=//label[contains(text(),"CPF/CNPJ")]
+${NUM_CPF}           id=pt1:itxNumCpfCnpj::content
+${LUPA_CPF}          xpath=//*[@id="pt1:btnCpfCnpj"]/a
+${CMP_TEL}           id=pt1:itxNumTelefone::content
+${CMP_EMAIL}         id=pt1:itxEmail::content
+${CMP_CEP}           id=pt1:itxCEP::content
+${LUPA_CEP}          xpath=//*[@id="pt1:btnCEP"]/a
+${LOGR}              id=pt1:itxNrLogradouro::content
+${PARTES_SALVAR}     xpath=//*[@id="pt1:btnSalvar"]/a
+#----Variável com    nome----
+${NOME_PARTE1}       id=pt1:j_id__ctru496:0:otxInfoDivorciando
+${NOME_PARTE2}       id=pt1:j_id__ctru496:1:otxInfoDivorciando
 
 #BENS
 ${TITULO}          id=pt1:pgl7
@@ -100,6 +104,12 @@ ${$_MOEDANAC}      xpath=//option[contains(text(), 'Dinheiro em Espécie - Moeda
 ${OBS_MOEDA}       id=pt1:formDinheiroEspecieMoedaNacional:itObsDinheiroEspecieMoedaNacional::content
 ${VLR_DECL}        id=pt1:formDinheiroEspecieMoedaNacional:itDinheiroEspecieMoedaNacionalValorDeclarado::content
 ${BTN_SAV_BENS}    xpath=//*[@id="pt1:b4"]/a
+#--Precatórios--
+${$_PRECATORIOS}     xpath=//option[contains(text(), 'Precatórios')]
+${CMP_OBS}           Observação não obrigatória Automação Ralph
+${BTN_CADASTRAR}     xpath=//span[contains(text(), 'CADASTRAR' )] 
+${TP_PRECATORIO}     id=pt1:formPrecatorio:comboTipoPrecatorio::content                           
+${NUM_PRECATORIO}    xpath=//input[@id='pt1:formPrecatorio:itPrecatorioNumDosAutos::content'] 
 
 #PARTILHA
 ${PERC%}           xpath=//*[@id="pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content"]
@@ -108,7 +118,9 @@ ${PERC2_%}         xpath=//input[@id='pt1:j_id__ctru33:0:j_id__ctru76:1:itPerc__
 ${BTN_SAV_PERC}    xpath=//*[@id="pt1:btnSalvarProsseguir"]/a
 ${full_name}       GABRIELLE MAIOLI
 #---Popup Partilha Divórcio---
-${BTN_ATENÇÂO}    id=pt1:j_id__ctru178
+${BTN_ATENÇÂO}       id=pt1:j_id__ctru178
+${OBS_PRECATORIO}    id=pt1:formPrecatorio:itObsPrecatorio::content
+${VLR_PRECATORIO}    id=pt1:formPrecatorio:itPrecatorioValorDeclarado::content
 
 #CÁLCULO FG
 ${FG_TRASMIT}    xpath=//span[contains(text(), 'RALPH DA SILVA SOUZA')]
@@ -123,14 +135,23 @@ ${FG_PERC1}    xpath=//span[contains(text(), '0,00')]
 
 
 
-#ANEXO
+#ANEXO GERAL
 ${NO_ANEXO}     xpath=//span[contains(text(), "Nessa declaração, os documentos 'Dados Gerais' são opcionais, caso desejar, anexe-os na aba 'Outros'.")]
 ${ANEXO_SAV}    id=pt1:btnSalvarProsseguir
 ${FILE}         C:\\Users\\SOLUTTIONS\\JonhPDF.pdf
 ${NOME_PDF}     JonhPDF.pdf
+
 #----Anexos para Doação Escritura Pública----
 ${ANEXO_GERAL3}    xpath=//input[@id='pt1:iAnexosDG:0:inputFile1::content']
 ${PAINEL4}         id=pt1:iAnexosDG:0:panelDG
+${ABA_BENS}        id=pt1:tabBD::disAcr 
+#----Anexos Bens e Direitos (Doação Precatórios)----
+${PAINEL5}        xpath=//span[contains(text (), 'Extrato Precatório Federal')]
+${TITULO_PREC}    Extrato Precatório Federal
+${ANEXO_BENS}     id=pt1:iAnexosBD:0:if2::content
+${PAINEL6}        id=pt1:panelBD
+${MSG_MALHA}      Sua Declaração do ITCMD foi finalizada e enviada com sucesso à Receita Estadual, após a análise necessária você receberá a confirmação por e-mail e poderá gerar a Guia de Recolhimento do imposto para pagamento em qualquer banco credenciado. 
+
 
 
 #----Anexos para Divórcio----
@@ -154,10 +175,12 @@ ${PAINEL3}          id=pt1:is3:1:iAnexosP:0:pgl5
 
 
 
+
 #ENVIO/PDF
 ${TXT_ENVIO}    Confira os dados abaixo antes de enviar a declaração:
-${BTN_ENVIO}    xpath=//*[@id="pt1:j_id__ctru13"]/a
+${BTN_ENVIO}    xpath=//span[contains(text(), 'ENVIAR DECLARAÇÃO')]
 
 #TELA CONFIRMAÇÃO ENVIO
 ${ENV_SUCESSO}    xpath=//span[contains(text(), 'Declaração finalizada e Enviada com sucesso!')]
 ${NUM_DECL}       xpath=//*[@class='x24y']
+${MSG_ENVIO}      Declaração finalizada e Enviada com sucesso!

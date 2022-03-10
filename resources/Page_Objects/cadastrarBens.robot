@@ -16,3 +16,4 @@ Quando informo os bens de direito
     Input Text                          ${VLR_DECL}                                   800.000,00
     Sleep                               2
     Click Element                       ${BTN_SAV_BENS}                               modifier=False
+
