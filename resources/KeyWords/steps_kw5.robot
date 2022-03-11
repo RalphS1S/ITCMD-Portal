@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../base.robot
+Resource    ../Page_Objects/Bens/dinheiroNacional.robot
 
 #Library    keyword.py
 
@@ -33,7 +34,7 @@ Quando logo com a minha credencial
     Wait Until Element Is Visible    ${BTN_ACESSAR}    timeout=30    error=None
     Click Button                     ${BTN_ACESSAR}
 
-    Então valido usuário logado  
+    Então valido usuário logado    
 
 #----Criar declaração Divórcio Cartório----
 
@@ -188,4 +189,144 @@ Então clico no botão, prosseguindo para tela /itcmdListaBens
 
     Wait Until Page Contains         Bens e Direitos    timeout=60    error=None    
     Wait Until Element Is Visible    ${CAD_BENS}        timeout=60    error=None
+
+Incluíndo ativo Dinheiro em Espécie Moeda Nacional e salvando
+
+    Ativo Dinheiro em Espécie Moeda Nacional
+
+Dado que possuo as duas partes do divórcio
+    ${name1}=    Get Text    ${NOME_PARTILHA1}
+    Log          ${name1}
+
+    ${name2}=    Get Text    ${NOME_PARTILHA2}
+    Log          ${name2}
+
+    Set Global Variable    ${name1} 
+    Set Global Variable    ${name2}     
+
+    Page Should Contain    ${name1}    loglevel=TRACE
+    Page Should Contain    ${name2}    loglevel=TRACE
+
+    Scroll Page To Location    0    2000
+
+    Wait Until Element Is Visible    ${PERC_%}    timeout=30    error=None
+
+E informo os valores correspondentes da partilha
+#----Percentual para o primeiro Divorciando-----#
+    Wait Until Element Is Visible    ${PERC_%}    timeout=60    error=None
+    Press Keys                       ${PERC_%}    BACKSPACE
+    Press Keys                       ${PERC_%}    50
+    Press Keys                       ${PERC_%}    ENTER
+#----Percentual para o segundo Divorciando-----#
+    Scroll Page To Location          0             2000          
+    Wait Until Element Is Visible    ${PERC2_%}    timeout=60    error=None
+    Press Keys                       ${PERC2_%}    BACKSPACE
+    Press Keys                       ${PERC2_%}    50
+    Press Keys                       ${PERC2_%}    ENTER
+
+E Observo o cálculo do valor recebido pelas partes
+
+    Wait Until Page Contains    Valor recebido    timeout=60    error=None
+
+    Element Should Contain    ${GRID_BEM}    ${name1}    message=Contem, ${name1}    ignore_case=False
+    Element Should Contain    ${GRID_BEM}    ${name2}    message=Contém, ${name2}    ignore_case=False
+
+    Log    ${name1}    level=INFO    html=False    console=False    repr=False
+    Log    ${name2}    level=INFO    html=False    console=False    repr=False
+
+Quando é observado a divisão equânime
+
+    Should Not Be Equal As Strings    50              2.500.000,00    msg=Partilha incorreta    values=True    ignore_case=False
+    Should Be Equal                   2.500.000,00    2.500.000,00    msg=Partilha Correta      values=True    ignore_case=False
+
+Então a soma dos valores partilhados é a porcentagem total do bem
+
+    Page Should Contain    100%    loglevel=TRACE
+
+    Wait Until Element Is Visible    ${BTN_SAV_PERC}    timeout=60
+    Double Click Element             ${BTN_SAV_PERC}
+
+    # Wait Until Element Is Visible    ${BTN_ATENÇÂO}    timeout=60
+    # Page Should Contain              Atenção           loglevel=TRACE
+    # Click Element                    ${BTN_ATENÇÂO}    modifier=False
+
+Dado que possuo os valores zerados para FG equânime
+
+    Wait Until Page Contains    Demonstrativo de cálculo    timeout=60    error=None    
+
+    Wait Until Element Contains    ${BENEFICIARIO1}    R$ 0,00    timeout=60    error=None
+    Wait Until Element Contains    ${BENEFICIARIO2}    R$ 0,00    timeout=60    error=None
+
+E adiciono observação necessária, salvo e prossigo
+
+    Wait Until Element Is Visible    ${CMP_OBSERVAÇÂO}    timeout=60                           error=None
+    Input Text                       ${CMP_OBSERVAÇÂO}    Observação FG equânime AUTO Ralph
+
+    Scroll Page To Location    0    2000
+
+    Wait Until Element Contains    ${FG_CALC}                      CALCULAR FATO GERADOR    timeout=60    error=None
+    Double Click Element           ${FG_CALC}
+    Wait Until Page Contains       ITCMD calculado com sucesso!    timeout=60               error=None
+
+    Wait Until Element Is Visible    ${FG_SALVAR}    timeout=60    error=None
+    Double Click Element             ${FG_SALVAR}
+
+Quando insiro os anexos correspondentes
+
+    Wait Until Element Is Visible    ${ABA_DADOS}    timeout=60        error=None
+    Click Element                    ${ABA_DADOS}    modifier=False
+
+    Page Should Contain    Anexos    loglevel=TRACE
+
+    Wait Until Element Is Enabled    ${BNT_ESCOLHER}    timeout=60    error=None    
+    #Execute JavaScript               document.getElementById('pt1:iAnexosDG:0:inputFile1::content').click()
+
+#----Anexar Documentos em PDF para LI de ANEXOS----
+
+#Dados Gerais - Minuta da Escritura Pública...
+    Choose File                    ${ANEXO_GERAL}    ${FILE}
+    Wait Until Element Contains    ${PAINEL}         ${NOME_PDF}    timeout=60    error=None
+
+    Scroll Page To Location    0    2000
+
+Então posso enviar a declaração e observar seu número
+
+    Wait Until Element Is Visible    ${ABA_PESSOAS}    timeout=60        error=None
+    Click Element                    ${ABA_PESSOAS}    modifier=False
+
+#Pessoas - Certidão de Casamento...
+    Choose File                    ${ANEXO_PESSOAS}    ${FILE}
+    Wait Until Element Contains    ${PAINEL3}          ${NOME_PDF}    timeout=60    error=None
+
+    Wait Until Element Is Enabled    ${BTN_SALVAR}    timeout=60        error=None
+    Click Element                    ${BTN_SALVAR}    modifier=False
+
+    #TELA DE ENVIO
+    Wait Until Element Is Visible    ${BTN_ENVIO}    timeout=60    error=None    
+    Wait Until Page Contains         ${TXT_ENVIO}    timeout=60    error=None
+
+    Wait Until Element Is Enabled    ${BTN_ENVIO}    timeout=60    error=Botão Envio    
+    Double Click Element             ${BTN_ENVIO}
+
+    Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=60    error=None
+
+
+    ${number}    Get Text     ${NUM_DECL}
+    Log          ${number}
+
+    End Test 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

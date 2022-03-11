@@ -95,6 +95,9 @@ ${PARTES_SALVAR}     xpath=//*[@id="pt1:btnSalvar"]/a
 #----Variável com    nome----
 ${NOME_PARTE1}       id=pt1:j_id__ctru496:0:otxInfoDivorciando
 ${NOME_PARTE2}       id=pt1:j_id__ctru496:1:otxInfoDivorciando
+${NOME_PARTILHA1}    id=pt1:j_id__ctru33:0:j_id__ctru76:0:otxInfoBeneficiario
+${NOME_PARTILHA2}    id=pt1:j_id__ctru33:0:j_id__ctru76:1:otxInfoBeneficiario    
+
 
 #BENS
 ${TITULO}          id=pt1:pgl7
@@ -121,6 +124,9 @@ ${full_name}       GABRIELLE MAIOLI
 ${BTN_ATENÇÂO}       id=pt1:j_id__ctru178
 ${OBS_PRECATORIO}    id=pt1:formPrecatorio:itObsPrecatorio::content
 ${VLR_PRECATORIO}    id=pt1:formPrecatorio:itPrecatorioValorDeclarado::content
+${GRID_BEM}          xpath=//*[@id='pt1:j_id__ctru33:0:pgl1' or @value='50']
+${VALIDADOR}         xpath=//*[@id='id="pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content"' or @name='pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__']
+${ID_VALIDADOR}      id=pt1:j_id__ctru33:0:j_id__ctru76:0:itPerc__::content
 
 #CÁLCULO FG
 ${FG_TRASMIT}    xpath=//span[contains(text(), 'RALPH DA SILVA SOUZA')]
@@ -130,8 +136,11 @@ ${FG_CALC}       id=pt1:it1:0:bb1
 ${FG_PAGAR}      xpath=//*[@id="pt1:it1:0:i1:0:ot9"]
 ${FG_SALVAR}     xpath=//*[@id="pt1:btnSalvarProsseguir"]/a
 #---FG Partilha Divórcio---
-${EQUANIME}    xpath=//span[contains(text(), 'Fato Gerador - Divórcio com Partilha Equânime dos Bens')]
-${FG_PERC1}    xpath=//span[contains(text(), '0,00')]
+${EQUANIME}          xpath=//span[contains(text(), 'Fato Gerador - Divórcio com Partilha Equânime dos Bens')]
+${FG_PERC1}          xpath=//span[contains(text(), '0,00')]
+${CMP_OBSERVAÇÂO}    id=pt1:it1:0:it2::content
+${BENEFICIARIO1}     id=pt1:it1:0:i1:0:pfl1                                                                      
+${BENEFICIARIO2}     id=pt1:it1:0:i1:1:pfl1
 
 
 

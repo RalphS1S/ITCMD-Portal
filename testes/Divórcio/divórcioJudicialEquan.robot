@@ -19,5 +19,5 @@ Enviar declaração divórcio
     Dado que inicio uma declaração de divórcio judicial
     E tenho um divorciado e divorciando válidos 
     Quando insiro o Bem Dinheiro em Espécie - Moeda Nacional
-    E partilho o valor do bem
+    E partilho o valor do bem jucial equânime
     Então devo observar um FG equânime e obter o nº da declaração

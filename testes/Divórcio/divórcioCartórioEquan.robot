@@ -28,3 +28,28 @@ Cadastrar lista de pessoas para partilha
     Quando retorno a tela /itcmdListaPartes observo os nomes cadastrados
     E observo o botão Salva e Prosseguir habilitado
     Então clico no botão, prosseguindo para tela /itcmdListaBens
+
+Adicionar ativo para divórcio cartório
+    Incluíndo ativo Dinheiro em Espécie Moeda Nacional e salvando
+
+Partilhar Bem Fato Gerador Equânime
+    Dado que possuo as duas partes do divórcio
+    E informo os valores correspondentes da partilha
+    E Observo o cálculo do valor recebido pelas partes
+    Quando é observado a divisão equânime
+    Então a soma dos valores partilhados é a porcentagem total do bem
+
+Validar valores e enviar declaração
+    Dado que possuo os valores zerados para FG equânime
+    E adiciono observação necessária, salvo e prossigo
+    Quando insiro os anexos correspondentes   
+    Então posso enviar a declaração e observar seu número
+
+
+
+
+
+
+     
+
+
