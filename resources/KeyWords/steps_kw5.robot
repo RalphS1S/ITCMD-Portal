@@ -246,9 +246,9 @@ Então a soma dos valores partilhados é a porcentagem total do bem
     Wait Until Element Is Visible    ${BTN_SAV_PERC}    timeout=60
     Double Click Element             ${BTN_SAV_PERC}
 
-    # Wait Until Element Is Visible    ${BTN_ATENÇÂO}    timeout=60
-    # Page Should Contain              Atenção           loglevel=TRACE
-    # Click Element                    ${BTN_ATENÇÂO}    modifier=False
+    Wait Until Element Is Visible    ${BTN_ATENÇÂO}    timeout=60
+    Page Should Contain              Atenção           loglevel=TRACE
+    Click Element                    ${BTN_ATENÇÂO}    modifier=False
 
 Dado que possuo os valores zerados para FG equânime
 
@@ -310,7 +310,7 @@ Então posso enviar a declaração e observar seu número
 
     Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=60    error=None
 
-
+    
     ${number}    Get Text     ${NUM_DECL}
     Log          ${number}
 

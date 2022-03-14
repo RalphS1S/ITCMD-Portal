@@ -41,7 +41,7 @@ ${DTA_MODALIDADE}     id=pt1:itxDtAcaoModalidade::content
 ${PROSS_DOACAO}       xpath=//*[@id='pt1:b3']
 ${DOACAO_PLENA}       pt1:sorTipoDoacao
 ${BTN_SALVAR}         xpath=//span[contains(text(), 'SALVAR E PROSSEGUIR')]
-${BTN_PROSSEGUIR}     xpath=/html/body/div[1]/form/span[1]/div[2]/div[5]/div/div/div/span/div/div[3]/div
+${BTN_PROSSEGUIR}     id=pt1:btnSalvarProsseguir
 ${CAD_BENFICIARIO}    xpath=/html/body/div/form/span[1]/div[2]/div[4]/div/div/div/div[3]/div[4]/table/tbody/tr/td[3]/div/div/div/a
 ${BTN_SAV_PARTES}     xpath=/html/body/div/form/span[1]/div[2]/div[5]/div/div/span/div/div[3]/div/a
 
@@ -187,7 +187,7 @@ ${PAINEL3}          id=pt1:is3:1:iAnexosP:0:pgl5
 
 #ENVIO/PDF
 ${TXT_ENVIO}    Confira os dados abaixo antes de enviar a declaração:
-${BTN_ENVIO}    xpath=//span[contains(text(), 'ENVIAR DECLARAÇÃO')]
+${BTN_ENVIO}    xpath=//span[@class='x27h xkq p_AFTextOnly' or contains(text(), 'ENVIAR DECLARAÇÃO')]
 
 #TELA CONFIRMAÇÃO ENVIO
 ${ENV_SUCESSO}    xpath=//span[contains(text(), 'Declaração finalizada e Enviada com sucesso!')]
