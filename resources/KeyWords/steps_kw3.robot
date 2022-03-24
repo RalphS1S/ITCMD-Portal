@@ -106,14 +106,15 @@ E tenho um divorciado e divorciando válidos
     Select From List By Value        ${CAD_UF}    17
     Wait Until Element Contains      ${CAD_UF}    PR            timeout=60    error=None
 
-    Wait Until Element Is Visible    ${CD_MUNICIPIO}                                                       timeout=60    error=None    
-    Select From List By Value        ${CD_MUNICIPIO}                                                       95            
-    Wait Until Element Contains      ${CD_MUNICIPIO}                                                       CURITIBA      timeout=60    error=None
-    Execute Javascript               document.getElementById('pt1:socCodigoMunicipio::content').click()
+    Wait Until Element Is Enabled    ${CD_MUNICIPIO}    timeout=60    error=None         
+    Select From List By Value        ${CD_MUNICIPIO}    95
+    Should Not Be Equal              PR                 CURITIBA      msg=Passa Teste    values=True    ignore_case=False    
+    Press Keys                       ${CD_MUNICIPIO}    ENTER         
 
-    Wait Until Element Is Visible    ${JUIZO_DIV}    timeout=60             error=None    
-    Press Keys                       ${JUIZO_DIV}    ENTER                  
+    Wait Until Element Is Visible    ${JUIZO_DIV}    timeout=60             error=None
+    Click Element                    ${JUIZO_DIV}    modifier=False         
     Input Text                       ${JUIZO_DIV}    JuizoAutomaçãoRalph
+    Press Keys                       ${JUIZO_DIV}    ENTER
 
     Wait Until Element Is Visible    ${BTN_SETA2}    timeout=60    error=None
     Double Click Element             ${BTN_SETA2}    
@@ -126,8 +127,9 @@ E tenho um divorciado e divorciando válidos
     Click Element                    ${ALVARA_N}    modifier=False
 
     Scroll Page To Location          0                2000 
-    Wait Until Element Is Visible    ${BTN_SALVAR}    timeout=60    error=None
-    Wait Until Element Is Enabled    ${BTN_SALVAR}    timeout=60    error=Botão "Salvar" sem ação
+    Wait Until Element Is Visible    ${BTN_SALVAR}    timeout=100    error=None
+    Wait Until Element Is Enabled    ${BTN_SALVAR}    timeout=100    error=Botão "Salvar" sem ação
+    Press Keys                       ${BTN_SALVAR}    ENTER
     Double Click Element             ${BTN_SALVAR}
 
 

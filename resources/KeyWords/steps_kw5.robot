@@ -13,7 +13,7 @@ Dado que acesso a página login
 
 E acesso título itcmdSobre
     #Localizando a Page /itcmdSobre
-    Wait Until Element Is Visible    ${FAZER_DECLARAÇÃO}    timeout=30        error=None
+    Wait Until Element Is Enabled    ${FAZER_DECLARAÇÃO}    timeout=60        error=None    
     Click Element                    ${FAZER_DECLARAÇÃO}    modifier=False
     Wait Until Element Is Visible    ${ACESSAR}             timeout=30        error=None
     Click Element                    ${ACESSAR}             modifier=False
@@ -46,7 +46,7 @@ Dado que estou logado como contribuinte
     Click Element At Coordinates        ${LGN_DECLARAÇÃO}    147           19                                             
     Double Click Element                ${LGN_DECLARAÇÃO}    
 
-    Page Should Contain    Art. 299 - Omitir,
+    Wait Until Page Contains    Art. 299 - Omitir,    timeout=60    error=None
 
     Wait Until Element Is Visible    ${CAMPO_TEL}    timeout=30    error=None    
 
@@ -89,7 +89,8 @@ Quando preencho a lista de itens dos Dados Gerais
     Select From List By Value        ${CD_MUNICIPIO}    95                
     Wait Until Element Contains      ${CD_MUNICIPIO}    CURITIBA          timeout=60    error=None
 
-    Wait Until Element Is Visible    id=pt1:socCodReparticao::content    timeout=60        error=None
+    Wait Until Element Is Visible    id=pt1:socCodReparticao::content    timeout=60                  error=None
+    Wait Until Element Contains      id=pt1:socCodReparticao::content    11º TABELIONATO DE NOTAS    timeout=60    error=None
     Click Element                    id=pt1:socCodReparticao::content    modifier=False
     Select From List By Value        id=pt1:socCodReparticao::content    1
 
@@ -310,7 +311,7 @@ Então posso enviar a declaração e observar seu número
 
     Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=60    error=None
 
-    
+
     ${number}    Get Text     ${NUM_DECL}
     Log          ${number}
 

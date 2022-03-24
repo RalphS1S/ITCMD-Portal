@@ -7,7 +7,7 @@ ${URL_BASE}
 
 #Login Page /itcmdSobre
 ${FAZER_DECLARAÇÃO}    id=pt1:b4a
-${LGN_DECLARAÇÃO}      xpath=//*[@id='pt1:b4' or contains(text(), 'FAZER DECLARAÇÃO')]
+${LGN_DECLARAÇÃO}      xpath=//*[text()= 'FAZER DECLARAÇÃO ']
 ${ACESSAR}             id=pt1:popup:b1
 
 #Autenticador
@@ -38,9 +38,9 @@ ${ATO_PARTICULAR}     xpath=//label[contains(text(),"Por Ato Particular")]
 ${RADIO_DOACAO}       pt1:sorTipoRegistro
 ${DTA_DOACAO}         xpath=//span[contains(text(),"Data da Doação")]
 ${DTA_MODALIDADE}     id=pt1:itxDtAcaoModalidade::content
-${PROSS_DOACAO}       xpath=//*[@id='pt1:b3']
+${PROSS_DOACAO}       id=pt1:b3
 ${DOACAO_PLENA}       pt1:sorTipoDoacao
-${BTN_SALVAR}         xpath=//span[contains(text(), 'SALVAR E PROSSEGUIR')]
+${BTN_SALVAR}         id=pt1:btnSalvarProsseguir
 ${BTN_PROSSEGUIR}     id=pt1:btnSalvarProsseguir
 ${CAD_BENFICIARIO}    xpath=/html/body/div/form/span[1]/div[2]/div[4]/div/div/div/div[3]/div[4]/table/tbody/tr/td[3]/div/div/div/a
 ${BTN_SAV_PARTES}     xpath=/html/body/div/form/span[1]/div[2]/div[5]/div/div/span/div/div[3]/div/a
@@ -67,11 +67,18 @@ ${BTN_SETA2}         id=pt1:b4
 ${SOBREPART_N}       id=pt1:btnSobrepartilhaNao
 ${ALVARA_N}          id=pt1:btnLiberacaoBensAlvaraNao
 
-
 #Dados Tipo Transmissão Divórcio Cartório
 ${BTN_DIVORCIO}      id=pt1:btnTransmDivorcio
 ${RD_DIVORCIO}       id=pt1:sorTipoInventario:_0
 ${CD_DIVORCIANDO}    id=pt1:btnCadastrarDivorciando
+
+#Dados Tipo Transmissão Compra e Venda
+${BTN_OUTROS}        id=pt1:btnTransmOutro
+${RD_COMPRAVENDA}    id=pt1:sorModalidade:_3
+${DT_INVALIDA}       Para compra e venda realizada após 28/02/1989 ou antes de 01/01/1967 não é necessário o recolhimento de ITCMD. Verifique se o ITBI é devido ao município.
+${BTN_SETA3}         id=pt1:b3
+
+
 
 
 #PARTES
@@ -80,6 +87,7 @@ ${CPF_1}             053.285.259-14
 ${CPF_2}             110.020.488-18
 ${CPF_3}             535.988.309-04
 ${CPF_4}             136.052.557-28
+${CNPJ}              03.872.681/0001-76
 ${EMAIL}             ralph.souza@integraparana.com.br
 ${CEP}               80240018
 ${CAD_TRANSMIT}      id=pt1:btnCadastrarTransmitente
@@ -107,6 +115,20 @@ ${$_MOEDANAC}      xpath=//option[contains(text(), 'Dinheiro em Espécie - Moeda
 ${OBS_MOEDA}       id=pt1:formDinheiroEspecieMoedaNacional:itObsDinheiroEspecieMoedaNacional::content
 ${VLR_DECL}        id=pt1:formDinheiroEspecieMoedaNacional:itDinheiroEspecieMoedaNacionalValorDeclarado::content
 ${BTN_SAV_BENS}    xpath=//*[@id="pt1:b4"]/a
+#--Casa--
+${$_CASA}              id=pt1:comboTipoBem::content
+${BTN_LUPA}            xpath=//*[@id="pt1:formCasa:btnCEPCasa"]/a
+${CASA_CEP}            id=pt1:formCasa:itCasaCEP::content
+${LOGRADOURO}          id=pt1:formCasa:itCasaNumeroLogradouro::content
+${TERRENO}             id=pt1:formCasa:itCasaAreaTerreno::content
+${A_CONSTRUIDA}        id=pt1:formCasa:itCasaAreaConstruida::content
+${IND_FISCAL}          id=pt1:formCasa:itCasaIndicacaoFiscal::content
+${CASA_MATRICULA}      id=pt1:formCasa:itCasaMatricula::content
+${FINANCIAMENTO}       id=pt1:formCasa:radioCasaFinanciamento::content
+${RD_FINANCIAMENTO}    id=pt1:formCasa:radioCasaFinanciamento:_1
+${FRACAO_IDEAL}        id=pt1:formCasa:radioCasaFracaoIdeal:_1
+${CASA_CARTORIO}       xpath=//select[@id='pt1:formCasa:soc40::content' or @name='pt1:formCasa:soc40']
+
 #--Precatórios--
 ${$_PRECATORIOS}     xpath=//option[contains(text(), 'Precatórios')]
 ${CMP_OBS}           Observação não obrigatória Automação Ralph
@@ -159,7 +181,10 @@ ${PAINEL5}        xpath=//span[contains(text (), 'Extrato Precatório Federal')]
 ${TITULO_PREC}    Extrato Precatório Federal
 ${ANEXO_BENS}     id=pt1:iAnexosBD:0:if2::content
 ${PAINEL6}        id=pt1:panelBD
-${MSG_MALHA}      Sua Declaração do ITCMD foi finalizada e enviada com sucesso à Receita Estadual, após a análise necessária você receberá a confirmação por e-mail e poderá gerar a Guia de Recolhimento do imposto para pagamento em qualquer banco credenciado. 
+${MSG_MALHA}      Sua Declaração do ITCMD foi finalizada e enviada com sucesso à Receita Estadual, após a análise necessária você receberá a confirmação por e-mail e poderá gerar a Guia de Recolhimento do imposto para pagamento em qualquer banco credenciado.
+#----Anexos Bens e Direitos (Compra e Venda)----
+${ANEXO_BENS2}    id=pt1:iAnexosBD:1:if2::content
+${PAINEL_BENS}    id=pt1:iAnexosBD:1:pgl27
 
 
 
@@ -187,7 +212,7 @@ ${PAINEL3}          id=pt1:is3:1:iAnexosP:0:pgl5
 
 #ENVIO/PDF
 ${TXT_ENVIO}    Confira os dados abaixo antes de enviar a declaração:
-${BTN_ENVIO}    xpath=//span[@class='x27h xkq p_AFTextOnly' or contains(text(), 'ENVIAR DECLARAÇÃO')]
+${BTN_ENVIO}    id=pt1:j_id__ctru38
 
 #TELA CONFIRMAÇÃO ENVIO
 ${ENV_SUCESSO}    xpath=//span[contains(text(), 'Declaração finalizada e Enviada com sucesso!')]

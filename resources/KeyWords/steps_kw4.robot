@@ -14,7 +14,7 @@ Dado que acesso a página login
 E acesso título itcmdSobre
     #Localizando a Page /itcmdSobre
     Wait Until Element Is Visible    ${FAZER_DECLARAÇÃO}    timeout=30        error=None
-    Click Element                    ${FAZER_DECLARAÇÃO}    modifier=False
+    Double Click Element             ${FAZER_DECLARAÇÃO}    
     Wait Until Element Is Visible    ${ACESSAR}             timeout=30        error=None
     Click Element                    ${ACESSAR}             modifier=False
 
@@ -34,18 +34,17 @@ Quando logo com a minha credencial
     Wait Until Element Is Enabled    ${BTN_ACESSAR}    timeout=30    error=None
     Double Click Element             ${BTN_ACESSAR}
 
-    Então valido usuário logado  
+    Então valido usuário logado    
 
 #----Criar declaração Doação com ATIVO Precatório----#
 Dado que inicio uma declaração de doação precatório
 
-    Wait Until Element Is Enabled       ${LGN_DECLARAÇÃO}    timeout=60    error=None                                     
-    Element Should Be Enabled           ${LGN_DECLARAÇÃO}
-    Wait Until Page Contains Element    ${LGN_DECLARAÇÃO}    timeout=10    error=Não localizado botão Fazer Declaração    
-    Click Element At Coordinates        ${LGN_DECLARAÇÃO}    147           19                                             
-    Double Click Element                ${LGN_DECLARAÇÃO}    
+    Wait Until Element Is Enabled    ${LGN_DECLARAÇÃO}    timeout=60    error=None    
+    Element Should Be Enabled        ${LGN_DECLARAÇÃO}
+    Press Keys                       ${LGN_DECLARAÇÃO}    ENTER         
+    Double Click Element             ${LGN_DECLARAÇÃO}    
 
-    Page Should Contain    Art. 299 - Omitir,
+    Wait Until Page Contains    Art. 299 - Omitir,    timeout=60    error=None
 
     Wait Until Element Is Visible    ${CAMPO_TEL}    timeout=30    error=None    
     #Double Click Element             ${CAMPO_TEL}
@@ -228,8 +227,12 @@ Então devo obter os valores junto ao número da declaração e informação da 
     Wait Until Element Is Visible    ${BTN_ENVIO}    timeout=30    error=None                    
     Wait Until Page Contains         ${TXT_ENVIO}    timeout=30    error=Não localizado texto
 
-    Wait Until Element Is Enabled    ${BTN_ENVIO}    timeout=30    error=None    
-    Double Click Element             ${BTN_ENVIO}
+    Scroll Page To Location    0    2000
+
+    Wait Until Element Is Enabled    ${BTN_ENVIO}         timeout=30        error=None
+    Current Frame Should Contain     ENVIAR DECLARAÇÃO    loglevel=TRACE
+    Click Element                    ${BTN_ENVIO}         modifier=False    
+
 
     Wait Until Element Contains    ${ENV_SUCESSO}    ${MSG_ENVIO}    timeout=30    error=None    
     Wait Until Page Contains       ${MSG_MALHA}      timeout=60      error=None

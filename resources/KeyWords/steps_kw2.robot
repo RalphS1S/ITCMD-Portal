@@ -13,7 +13,7 @@ Dado que acesso a página login
 
 E acesso título itcmdSobre
     #Localizando a Page /itcmdSobre
-    Wait Until Element Is Visible    ${FAZER_DECLARAÇÃO}    timeout=60        error=None
+    Wait Until Element Is Enabled    ${FAZER_DECLARAÇÃO}    timeout=90        error=None
     Click Element                    ${FAZER_DECLARAÇÃO}    modifier=False
     Wait Until Element Is Visible    ${ACESSAR}             timeout=60        error=None
     Click Element                    ${ACESSAR}             modifier=False
@@ -46,7 +46,7 @@ Dado que envio uma declaração de doação por escritura pública
     Click Element At Coordinates     ${LGN_DECLARAÇÃO}    147           19            
     Click Element                    ${LGN_DECLARAÇÃO}    
 
-    Page Should Contain    Art. 299 - Omitir,
+    Wait Until Page Contains    Art. 299 - Omitir,    timeout=60    error=None
 
     Wait Until Element Is Visible    ${CAMPO_TEL}    timeout=60    error=None    
 
