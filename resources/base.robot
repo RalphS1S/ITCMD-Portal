@@ -12,7 +12,7 @@ ${BASE_URL_UAT}    http://webcnp01.homologacao.sefa.parana:8895/itcmd_UAT/faces/
 
 ***Keywords*****
 Abrir Navegador
-    Open Browser               about:blank    headlessFirefox 
+    Open Browser               about:blank    Firefox 
     Set Window Size            1440           900
     Maximize Browser Window
 
